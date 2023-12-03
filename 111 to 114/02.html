@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 200px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="fname">Enter your name:</label>
+        <input type="text" name="fname" placeholder="Enter Your First Name" id="fname">
+        <label for="lname">Enter your name:</label>
+        <input type="text" name="lname" placeholder="Enter Your last name" id="lname">
+        <label for="famname">Enter your name:</label>
+        <input type="text" name="famname" placeholder="Enter Your family" id="famname">
+    </form>
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        </select>
+        <script>
+            let sele = document.getElementsByTagName("select")[0];
+            sele.value = window.sessionStorage.getItem("sele");
+            sele.addEventListener("blur",test);
+            let inputs = document.getElementsByTagName("input");
+            inputs[0].value = window.sessionStorage.getItem("fname");
+            inputs[0].addEventListener("blur",test);
+            inputs[1].value = window.sessionStorage.getItem("lname");
+            inputs[1].addEventListener("blur",test);
+            inputs[2].value = window.sessionStorage.getItem("famname");
+            inputs[2].addEventListener("blur",test);
+            function test(){
+                window.sessionStorage.setItem("fname",inputs[0].value);
+                window.sessionStorage.setItem("lname",inputs[1].value);
+                window.sessionStorage.setItem("famname",inputs[2].value);
+                window.sessionStorage.setItem("sele",sele.value);
+            }
+        </script>
+</body>
+</html>

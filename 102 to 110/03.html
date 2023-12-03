@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>10</div>
+    <script>
+        let mainDiv = document.querySelectorAll("div")[0];
+        function test() {
+            mainDiv.innerHTML -= 1;
+            console.log(typeof mainDiv.innerHTML);
+            if (mainDiv.innerHTML === "5") {
+                // document.location.href = "https://elzero.org/"
+                window.open("https://elzero.org/","_blank")
+                
+            }
+
+            if(mainDiv.innerHTML ==="0"){
+                clearInterval(count);
+            }
+        }
+        let count = setInterval(test, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myFriends = ["Ahmed", "Elham", "Osama", "Gamal"];
+        let num = 3;
+        let test = myFriends.pop();
+        console.log(myFriends); // ["Ahmed", "Elham", "Osama"];
+
+        myFriends = ["Ahmed", "Elham", "Osama", "Gamal"];
+        let test2 = myFriends.reverse()
+        test2.shift();
+        test2.reverse();
+        console.log(test2); // ["Ahmed", "Elham", "Osama"];
+
+        myFriends = ["Ahmed", "Elham", "Osama", "Gamal"];
+        myFriends.splice(num);
+        console.log(myFriends); // ["Ahmed", "Elham", "Osama"];
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let getData = (apilink) => {
+        //     return new Promise((resolve, reject) => {
+        //         let req = new XMLHttpRequest();
+        //         req.open("GET", apilink);
+        //         req.send();
+        //         req.onload = function () {
+        //             if (this.readyState === 4 && this.status === 200) {
+        //                 resolve(JSON.parse(this.responseText));
+        //             } else {
+        //                 reject("data not found");
+        //             }
+        //         }
+        //     });
+        // };
+        // getData("01.json").then((result) => {
+        //     result.length = 5;
+        //     console.log(result);
+        //     return result;
+        // }).then((art) => {
+        //     for (let i = 0; i < art.length; i++) {
+        //         let div = document.createElement("div");
+        //         let h3 = document.createElement("h3");
+        //         h3.innerText = art[i].title;
+        //         let p = document.createElement("p");
+        //         p.innerText = art[i].description;
+        //         div.append(h3, p);
+        //         document.body.appendChild(div);
+
+
+        //     }
+        // })
+        fetch("01.json").then((res)=>{
+            console.log(res);
+            let myData = res.json();
+            console.log(myData);
+            return myData;
+        }).then((fulllen) => {
+            fulllen.length = 5;
+            return fulllen;
+        }).then((art) => {
+            for (let i = 0; i < art.length; i++) {
+                let div = document.createElement("div");
+                let h3 = document.createElement("h3");
+                h3.innerText = art[i].title;
+                let p = document.createElement("p");
+                p.innerText = art[i].description;
+                div.append(h3, p);
+                document.body.appendChild(div);
+
+        }})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let start = 0;
+        let mix = [1, 2, 3, "A", "B", "C", 4];
+        let i =start;
+        for(;;){
+            if( i === mix.length ) break;
+            i++;
+            if(isNaN(mix[i])){
+                continue;
+            }else{
+                document.write(mix[i]+"<br>");
+            };
+            
+        }
+    </script>
+</body>
+</html>

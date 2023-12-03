@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function specialMix(...data) {
+            let num = 0;
+            for(let i = 0; i < data.length; i++){
+            if(!isNaN(data[i])){
+                num += data[i];
+            }else if(!isNaN(parseInt(data[i].slice(0,2)))) {
+                num+= parseInt(data[i].slice(0,2));
+            }else{
+                continue;
+            }
+        }
+        if (num !== 0){
+                return num;
+            }else{
+                return "All is string";
+            }
+    }
+
+        console.log(specialMix(10, 20, 30)); // 60
+        console.log(specialMix("10Test", "Testing", "20Cool")); // 30
+        console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
+        console.log(specialMix("Test", "Cool", "Test")); // All Is Strings
+        console.log(specialMix("dad","30sad","40mad","30dad")); // 100
+    </script>
+</body>
+</html>

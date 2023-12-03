@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let friends = ["Ahmed", "Sayed", "Ali", 1, 1, "Mahmoud", "Amany",2,"Sad","A7san",3,"whdan","Osama","Asa"];
+        let index = 0;
+        let counter = 0;
+        try{
+            while(index < friends.length){
+            index++;
+            if(isNaN(friends[index])){
+            if(friends[index].charAt(0) === "A" ){
+                continue;
+            } else{
+                counter++;
+            document.write(`<p>${counter}=>>${friends[index]} </p>`);
+            }}else{
+                continue;
+            }
+            
+        }}catch(e){
+            console.log("WHAT");
+        }
+        document.write("YES");
+
+        // while(index < friends.length) {
+        //     index++;
+        //     // what is that error
+        //     if(  isNaN(friends[index]) === false || friends[index].toString().charAt(0) === "A" ){
+        //         continue;
+        //     }else{
+        //         counter++;
+        //         document.write(`<p>${counter}=>>${friends[index]} </p>`);
+        //     }
+            
+        // }
+        // console.log("TEst");
+    </script>
+</body>
+</html>

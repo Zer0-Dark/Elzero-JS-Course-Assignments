@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculate(firstNum, secondNum ="Unknown", operation ="add") {
+            if(secondNum === "Unknown"){
+                document.write(`<h3> Second Number Not Found </h3>`);
+            }else if(operation === "add"){
+                document.write(`<h3> ${firstNum + secondNum}`);
+            }else if (operation === "subtract"){
+                document.write(`<h3> ${firstNum - secondNum} </h3>`);
+            }else if (operation === "multiply"){
+                document.write(`<h3> ${firstNum * secondNum}</h3>`);
+            }else{
+                document.write(`<h3> Please Enter add or subtract or multiply </h3>`);
+            }
+        }
+
+        // Needed Output
+        calculate(20); // Second Number Not Found
+        calculate(20, 30); // 50
+        calculate(20, 30, 'add'); // 50
+        calculate(20, 30, 'subtract'); // -10
+        calculate(20, 30, 'multiply'); // 600
+        calculate(20,30,"hi");
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Needed Output
+let date = new Date("2022-4-30");
+date.setHours(18);
+date.setMinutes(13);
+date.setSeconds(20)
+console.log(date);
+let day;
+if(date.getMonth() === 3){
+    day = "April";
+}else{
+    day = "What";
+}
+console.log(`Previous Month Is ${day}  and The Last Day is ${date.getDate()}`)
+
+// "Sat Apr 30 2022 18:13:20 GMT+0200 (Eastern European Standard Time)"
+// "Previous Month Is April And Last Day Is 30"
+    </script>
+</body>
+</html>

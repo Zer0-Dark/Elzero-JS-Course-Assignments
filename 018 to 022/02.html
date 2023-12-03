@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 3;
+        let bool = true;
+        let boo = false;
+
+// Solution One
+console.log(++bool * num); // 6
+bool = true;
+boo = false;
+// Solution Two
+console.log(++bool + ++boo + num); // 6
+bool = true;
+boo = false;
+// Soultion Three
+console.log(++bool * ++boo * num); // 6
+bool = true;
+boo = false;
+// Soultion Four
+console.log(num**++bool - num); // 6
+bool = true;
+boo = false;
+// Solution Five
+console.log(++num + +bool + ++boo ); // 6
+bool = true;
+boo = false;
+// Solution Six
+console.log("Write Your Code Here"); // 6
+    </script>
+</body>
+</html>

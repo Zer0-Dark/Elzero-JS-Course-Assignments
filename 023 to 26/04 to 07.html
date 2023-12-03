@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // task 04
+        let myVar = "100.56789 Views";
+        myVar = parseFloat(myVar);
+        console.log(Math.trunc(myVar)); // 100
+        console.log(+myVar.toFixed(2)); // 100.57
+        // task 05
+        let num = 10;
+        num = Number.isInteger(parseInt(num));
+        console.log( ++num); // 2
+        // tas 06
+        let flt = 10.4;
+        console.log(Math.floor(flt)); // 10
+        console.log(Math.trunc(flt)); // 10
+        console.log(Math.round(flt)); // 10
+        console.log(parseInt(flt)); // 10
+        console.log(flt - 0.4); // 10
+        //task 7
+        console.log(Math.trunc(Math.random() * 5)); // 0 || 1 || 2 || 3 || 4
+    </script>
+</body>
+</html>

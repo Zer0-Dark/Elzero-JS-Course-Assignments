@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ageInTime(theAge) {
+            if( theAge> 100 || theAge<10){
+                document.write(`<h3> Age Out Of Range </h3>`);
+            }else{
+                document.write(`<h3 =>${theAge} Years </h3>`);
+                document.write(`<h3 =>${theAge * 12} Months </h3>`);
+                document.write(`<h3 =>${theAge * 525600} Min </h3>`);
+                document.write(`<h3 =>${theAge * 31536000} Sec </h3>`);
+
+            }
+        }
+
+    // Needed Output
+    ageInTime(110); // Age Out Of Range
+    ageInTime(38); // Months Example => 456 Months
+    ageInTime(22);
+    </script>
+</body>
+</html>

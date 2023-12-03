@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans&family=Roboto&display=swap"
+        rel="stylesheet">
+    <style>
+        .bigDiv{
+            display: flex;
+            flex-direction: row;
+        }
+        .mainDiv{
+            width: calc(100%/3);
+            margin: 10px;
+            background-color:#B1B2FF;
+            color:#100144 ;
+            border: 3px solid black;
+        }
+        .mainDiv h3{
+            text-align: center;
+            padding-top: 20px;
+            font-size: 25px;
+        }
+        .mainDiv form{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px;
+            
+            
+        }
+        .mainDiv form input{
+            margin-left: 9px;
+            margin-right: 9px;
+        }
+        .mainDiv form p{
+            font-size:18px ;
+        }
+        h2{
+            margin-top: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigDiv">
+    <div class="mainDiv">
+        <h3>The Font Style</h3>
+        <form action="" id="fontForm">
+            <input type="radio" name="font" id="f1" value="open" id="defaultFam">
+            <p id="p1">Open</p>
+            <input type="radio" name="font" id="f2" value="Cairo">
+            <p id="p2">cairo</p>
+            <input type="radio" name="font" id="f3" value="Robot">
+            <p id="p3">Roboto</p>
+        </form>
+    </div>
+    <div class="mainDiv">
+        <h3>The Font Color</h3>
+        <form action="" onclick="" id="fontColor">
+            <input type="radio" name="color" value="red">
+            <p>red</p>
+            <input type="radio" name="color" value="green">
+            <p>green</p>
+            <input type="radio" name="color" value="blue">
+            <p>blue</p>
+            <input type="radio" name="color" value="black">
+            <p>black</p>
+            <input type="radio" name="color" value="yellow">
+            <p>yellow</p>
+            <input type="radio" name="color" value="orange">
+            <p>orange</p>
+        </form>
+    </div>
+    <div class="mainDiv">
+        <h3>The Font Size</h3>
+        <form action="">
+            <input type="range" id="fontSize" name="size" min="16" max="30" step="2">
+            <label id="fontSizeLabel" for="fontSize">Font Size</label>
+        </form>
+    </div>
+</div>
+    <h2>This is the Font after 1</h2>
+
+    <button onclick="restfun()">rest</button>
+<script>
+    
+    
+    //get the font size and show an indicator
+    let fontSize = document.querySelector("#fontSize");
+    let inputFontLabel = document.querySelector("#fontSizeLabel");
+    console.log(fontSize.value);
+    //get the h2
+
+    let h = document.getElementsByTagName("h2")[0];
+
+    // get the value of checked 
+    let getValueRadio = function(name,type){
+        return function curried(e){
+        let ele = document.getElementsByName(name);
+        for(let i = 0; i < ele.length; i++){
+        if(name === "size"){
+            console.log("test");
+            h.style.fontSize = fontSize.value + "px";
+            showFont();
+        }else{
+            if(ele[i].checked){
+                if(type === "fontfamily"){
+                    if( ele[i].value === "open"){
+                        h.style.fontFamily = "'Open Sans', sans-serif";
+                        console.log("open on !")
+                    }else if (ele[i].value === "Cairo"){
+                        h.style.fontFamily = "'Cairo', sans-serif";
+                        console.log("cairo on !")
+                    }else {
+                        h.style.fontFamily = "'Times New Roman', Times, serif";
+                        console.log("roboto on !")
+
+                    }
+                }else if (type === "color"){
+                    if (ele[i].value === "red"){
+                        h.style.color = "red";
+                    } else if(ele[i].value === "blue"){
+                        h.style.color = "blue";
+                    }else if(ele[i].value === "black"){
+                        h.style.color = "black";
+                    }else if(ele[i].value === "orange"){
+                        h.style.color = "orange";
+                    }else if(ele[i].value === "yellow"){
+                        h.style.color = "yellow";
+                    }else if(ele[i].value === "green"){
+                        h.style.color = "green";
+                    }
+        }}}}
+
+            window.localStorage.setItem("color",h.style.color);
+            window.localStorage.setItem("fontSize",h.style.fontSize);
+            window.localStorage.setItem("fontFamily",h.style.fontFamily);
+
+        }    
+    }
+
+    //non carried
+    let getValueRadioo = function(name,type){
+        let ele = document.getElementsByName(name);
+        for(let i = 0; i < ele.length; i++){
+        if(name === "size"){
+            console.log("test");
+            h.style.fontSize = fontSize.value + "px";
+            showFont();
+        }else{
+            if(ele[i].checked){
+                if(type === "fontfamily"){
+                    if( ele[i].value === "open"){
+                        h.style.fontFamily = "'Open Sans', sans-serif";
+                        console.log("open on !")
+                    }else if (ele[i].value === "Cairo"){
+                        h.style.fontFamily = "'Cairo', sans-serif";
+                        console.log("cairo on !")
+                    }else {
+                        h.style.fontFamily = "'Times New Roman', Times, serif";
+                        console.log("roboto on !")
+
+                    }
+                }else if (type === "color"){
+                    if (ele[i].value === "red"){
+                        h.style.color = "red";
+                    } else if(ele[i].value === "blue"){
+                        h.style.color = "blue";
+                    }else if(ele[i].value === "black"){
+                        h.style.color = "black";
+                    }else if(ele[i].value === "orange"){
+                        h.style.color = "orange";
+                    }else if(ele[i].value === "yellow"){
+                        h.style.color = "yellow";
+                    }else if(ele[i].value === "green"){
+                        h.style.color = "green";
+                    }
+        }}}
+
+            window.localStorage.setItem("color",h.style.color);
+            window.localStorage.setItem("fontSize",h.style.fontSize);
+            window.localStorage.setItem("fontFamily",h.style.fontFamily);
+
+        }    
+    }
+    // call the fun for font
+    let fontForm = document.querySelector("#fontForm");
+    fontForm.addEventListener("click",getValueRadio("font","fontfamily"));
+    //call the fun for color
+    let fontColor = document.querySelector("#fontColor");
+    fontColor.addEventListener("click",getValueRadio("color","color"));
+    // call the font for fontsize
+    fontSize.addEventListener("click",getValueRadio("size"));
+    function showFont(){
+    inputFontLabel.innerHTML = fontSize.value;
+    }
+    //set the colors from the local
+   
+    // rest button
+    function restfun(){
+        window.localStorage.clear();
+        location.reload();
+    }
+  
+    function whyme(){
+        if(window.localStorage.getItem("color")){
+            h.style.color = window.localStorage.getItem("color");
+            h.style.fontSize = window.localStorage.getItem("fontSize");
+            h.style.fontFamily = window.localStorage.getItem("fontFamily");
+        }else{
+            fontForm[0].checked = true;
+            fontColor[0].checked = true;
+            fontSize.value = 16;
+            getValueRadioo("font","fontfamily");
+            getValueRadioo("color","color");
+            getValueRadioo("size");
+        }
+        
+        
+
+    }
+    whyme();
+</script>
+</body>
+
+</html>

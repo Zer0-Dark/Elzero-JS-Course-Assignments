@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let req = new XMLHttpRequest();
+        req.open("GET", "01.json");
+        req.send();
+        req.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log("DATA LOAded");
+                let mainData = JSON.parse(req.responseText);
+                console.log(mainData);
+                for (let i = 0; i < mainData.length; i++) {
+                    mainData[i].title = "All";
+                } let backTo = JSON.stringify(mainData);
+
+                for (let i = 0; i < mainData.length; i++) {
+                    let mainDiv = document.createElement("div");
+                    mainDiv.className = "data";
+                    let secDiv = document.createElement("div");
+                    let h2 = document.createElement("h2");
+                    h2.innerText = mainData[i].title;
+                    let p1 = document.createElement("p");
+                    p1.innerText = mainData[i].id
+                    let p2 = document.createElement("p");
+                    p2.innerText = mainData[i].name
+                    let p3 = document.createElement("p");
+                    p3.innerText = mainData[i].info
+                    mainDiv.appendChild(secDiv);
+                    secDiv.append(h2,p1,p2,p3);
+                    document.body.appendChild(mainDiv);
+
+
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

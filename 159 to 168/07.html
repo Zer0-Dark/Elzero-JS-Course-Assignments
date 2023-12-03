@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        function* genNumbers() {
+            yield* [1, 2, 2, 2, 3, 4, 5];
+        }
+        function* genLetters() {
+            yield* ["A", "B", "B", "B", "C", "D"];
+        }
+
+        function* genAll() {
+            let test = genLetters();
+            let test1 = genNumbers();
+            let nums2 = new Set();
+            let nums = new Set();
+            for (let i = 0; i < 6; i++) {
+                nums.add(test.next().value);
+            }
+            for (let i = 0; i < 7; i++) {
+                nums2.add(test1.next().value);
+            }
+            yield* nums2;
+            yield* nums;
+        }
+
+        // Write Your Generator Function Here
+
+        let generator = genAll();
+        console.log(generator.next()); // {value: 1, done: false}
+        console.log(generator.next()); // {value: 2, done: false}
+        console.log(generator.next()); // {value: 3, done: false}
+        console.log(generator.next()); // {value: 4, done: false}
+        console.log(generator.next()); // {value: 5, done: false}
+        console.log(generator.next()); // {value: "A", done: false}
+        console.log(generator.next()); // {value: "B", done: false}
+        console.log(generator.next()); // {value: "C", done: false}
+        console.log(generator.next()); // {value: "D", done: false}
+    </script>
+</body>
+
+</html>

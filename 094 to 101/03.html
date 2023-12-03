@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="our-element">Our Element</div>
+    <p>Paragraph</p>
+    <script>
+        // get da paragraph
+        let ParagraphE = document.getElementsByTagName("p")[0];
+        //get the div
+        let mainDiv = document.querySelector(".our-element");
+        // making before div 
+        let beforeDiv = document.createElement("div");
+        beforeDiv.setAttribute("class","start");
+        beforeDiv.setAttribute("title","Start Element");
+        beforeDiv.setAttribute("data-value","Start");
+        beforeDiv.innerHTML = ("Start");
+        // append it before the mainDiv
+        mainDiv.before(beforeDiv);
+        //make after div
+        let afterDiv = document.createElement("div");
+        afterDiv.setAttribute("class","end");
+        afterDiv.setAttribute("title","End Element");
+        afterDiv.setAttribute("data-value","End");
+        afterDiv.innerHTML = "End";
+        // append it after the mainDiv
+        mainDiv.after(afterDiv);
+        ParagraphE.remove();
+    </script>
+</body>
+</html>
